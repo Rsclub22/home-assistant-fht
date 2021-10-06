@@ -1,2 +1,4 @@
-# home-assistant-fht
-Fhem Connector for FHT Heating devices
+# Home-assistant-fht
+FHEM Connector for FHT Heating devices
+
+## Requires manual setup via FHEM-Webapi
