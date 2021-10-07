@@ -6,7 +6,7 @@ FHEM Connector for FHT Heating devices
 # Setup
 The FHEM Connector needs to be cloned into the custom_components folder
 ## FHEM WEBapi
-run these commands to open the WEBapi from FHEM
+run these commands in the FHEM-Webinterface to open the WEBapi from FHEM
 replace `<your-homeassitant-ip-here>`with the IP of your Home-Assitant Instance
 ```bash
 define WEBapi FHEMWEB 8086 global
