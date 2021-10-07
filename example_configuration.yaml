@@ -1,5 +1,7 @@
 # This is an example configuration file which shows what you need to add to your configuration.yaml in order to make it work
-# <FHEM-IP-Address> needs to be replaced with ip address of your FHEM-instance
+# <FHEM-IP-Address> needs to be replaced with ip address of your FHEM-instance (for locahost:127.0.0.1)
+# <port> change this to the port where your webapi is located (if followed this Setup) should be (8086)
+# <FHEM-Device-Name> change this to the device, which you are interested (no aliases) (standard format: FHT_(device_id) in device_id is your the id of your FHT device in FHEM).
 climate:
   - platform: fht_heating
     address: "<FHEM-IP-Address>:<port>"
