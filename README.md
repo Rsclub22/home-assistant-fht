@@ -19,3 +19,5 @@ attr WEBapi allowFrom <your-homeassitant-ip-here>
 ## Example
 see example_configuration.yaml
 
+# Thanks to
+Thanks a lot to https://github.com/tarek-yashi for writing the plugin.
