@@ -1,4 +1,4 @@
 climate:
   - platform: fht_heating
-    address: "<FHEM-IP-Adress>:<portx>"
+    address: "<FHEM-IP-Address>:<port>"
     dev_name: "<FHEM-Device-Name>"
