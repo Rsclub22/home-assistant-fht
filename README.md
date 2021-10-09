@@ -1,4 +1,3 @@
-# This is the README OF:
 # home-assistant-fht
 ## from: https://github.com/Rsclub22
 FHEM Connector for FHT Heating devices (connected via FHEM)
