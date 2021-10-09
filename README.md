@@ -5,10 +5,10 @@ FHEM Connector for FHT Heating devices (connected via FHEM)
 
 ## Requires FHEM to work
 You can find FHEM here: https://fhem.de/
-## Requires manual setup via FHEM-WEBbapi
+## Requires manual setup via FHEM-WEBapi
 Setup for the FHEM WEBapi here: https://github.com/Rsclub22/home-assistant-fht#fhem-webapi
 
-**IMPORTANT:** The WEBapi needs to be accesabile without a password
+**IMPORTANT:** The WEBapi needs to be accessable without a password
 # Setup
 The FHEM Connector needs to be cloned into the custom_components folder
 Download the FHEM Connector here: https://github.com/Rsclub22/home-assistant-fht/releases/download/v0.2/fht_heating.zip
@@ -16,14 +16,14 @@ and unzip it in your `custom_components` directory. If it doesn't exist create t
 
 ## FHEM WEBapi
 run these commands to open the WEBapi from FHEM
-replace `<your-homeassitant-ip-here>`with the IP of your Home-Assitant Instance
+replace `<your-homeassistant-ip-here>`with the IP of your Home-Assistant Instance
 ```bash
 define WEBapi FHEMWEB 8086 global
 attr WEBapi csrfToken none
-attr WEBapi allowFrom <your-homeassitant-ip-here>
+attr WEBapi allowfrom <your-homeassistant-ip-here>
 
 ```
-**IMPORTANT:** The WEBapi needs to be accesabile without a password
+**IMPORTANT:** The WEBapi needs to be accessabile without a password
 
 # Configuration
 ## Example
