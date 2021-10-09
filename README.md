@@ -15,7 +15,7 @@ Download the FHEM Connector here: https://github.com/Rsclub22/home-assistant-fht
 and unzip it in your `custom_components` directory. If it doesn't exist create the directory with `mkdir custom_components` and change the permissions with `chmod 777 custom_components` and `chown homeassistant custom_components`
 
 ## FHEM WEBapi
-run these commands to open the WEBapi from FHEM
+Run these commands to open the WEBapi from FHEM
 replace `<your-homeassistant-ip-here>`with the IP of your Home-Assistant Instance
 ```bash
 define WEBapi FHEMWEB 8086 global
