@@ -52,6 +52,7 @@ class FhtDevice(ClimateEntity):
     _attr_target_temperature_step = 0.5
     _attr_dev_name = ""
     _attr_address = ""
+    _attr_last_temp = "19.5"
 
     _attr_supported_features = SUPPORT_TARGET_TEMPERATURE
     _attr_temperature_unit = TEMP_CELSIUS
@@ -81,6 +82,7 @@ class FhtDevice(ClimateEntity):
     def set_hvac_mode(self, hvac_mode) -> None:
         if hvac_mode == HVAC_MODE_HEAT:
             self._fht_data_handler.set_value("desired-temp", "on")
+            self._fht_data_handler.set_value("desired-temp", _attr_last_temp)
 
         elif hvac_mode == HVAC_MODE_OFF:
             self._fht_data_handler.set_value("desired-temp", "off")
@@ -91,12 +93,14 @@ class FhtDevice(ClimateEntity):
 
     @property
     def target_temperature(self):
+        _attr_last_temp = self._fht_data_handler.get_cached_value("desired-temp")
         return float(self._fht_data_handler.get_cached_value("desired-temp"))
 
     def set_temperature(self, **kwargs):
         temperature = kwargs.get(ATTR_TEMPERATURE)
         if temperature is None:
             return
+        _attr_last_temp = temperature
         self._fht_data_handler.set_value("desired-temp", temperature)
         self.set_hvac_mode(HVAC_MODE_HEAT)
 
