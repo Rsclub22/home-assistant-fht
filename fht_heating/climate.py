@@ -68,7 +68,7 @@ class FhtDevice(ClimateEntity):
 
     @property
     def hvac_mode(self):
-        pass
+        return HVAC_MODE_HEAT
 
     @property
     def icon(self):
