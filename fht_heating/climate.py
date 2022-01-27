@@ -80,10 +80,10 @@ class FhtDevice(ClimateEntity):
 
     def set_hvac_mode(self, hvac_mode) -> None:
         if hvac_mode == HVAC_MODE_HEAT:
-            self._fht_data_handler.set_value("desired-temp", "19.5")
+            self._fht_data_handler.set_value("desired-temp", "on")
 
         elif hvac_mode == HVAC_MODE_OFF:
-            self._fht_data_handler.set_value("desired-temp", self.min_temp)
+            self._fht_data_handler.set_value("desired-temp", "off")
 
     @property
     def current_temperature(self):
