@@ -52,7 +52,6 @@ class FhtDevice(ClimateEntity):
     _attr_target_temperature_step = 0.5
     _attr_dev_name = ""
     _attr_address = ""
-    _attr_last_temp = "19.5"
 
     _attr_supported_features = SUPPORT_TARGET_TEMPERATURE
     _attr_temperature_unit = TEMP_CELSIUS
@@ -69,9 +68,7 @@ class FhtDevice(ClimateEntity):
 
     @property
     def hvac_mode(self):
-        if str(self._fht_data_handler.get_cached_value("actuator")).replace("%", "") != "0":
-            return HVAC_MODE_HEAT
-        return HVAC_MODE_OFF
+        pass
 
     @property
     def icon(self):
@@ -80,12 +77,7 @@ class FhtDevice(ClimateEntity):
         return "mdi:radiator-off"
 
     def set_hvac_mode(self, hvac_mode) -> None:
-        if hvac_mode == HVAC_MODE_HEAT:
-            self._fht_data_handler.set_value("desired-temp", "on")
-            self._fht_data_handler.set_value("desired-temp", self._attr_last_temp)
-
-        elif hvac_mode == HVAC_MODE_OFF:
-            self._fht_data_handler.set_value("desired-temp", "off")
+        pass
 
     @property
     def current_temperature(self):
