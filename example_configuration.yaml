@@ -6,3 +6,17 @@ climate:
   - platform: fht_heating
     address: "<FHEM-IP-Address>:<port>"
     dev_name: "<FHEM-Device-Name>"
+  # More devices:
+  - platform: fht_heating
+    address: "<FHEM-IP-Address>:<port>"
+    dev_name: "<FHEM-Device-Name>"
+  - platform: fht_heating
+    address: "<FHEM-IP-Address>:<port>"
+    dev_name: "<FHEM-Device-Name>"
+  - platform: fht_heating
+    address: "<FHEM-IP-Address>:<port>"
+    dev_name: "<FHEM-Device-Name>"
+  - platform: fht_heating
+    address: "<FHEM-IP-Address>:<port>"
+    dev_name: "<FHEM-Device-Name>"
+  #...
