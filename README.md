@@ -30,4 +30,4 @@ see `example_configuration.yaml` (https://github.com/Rsclub22/home-assistant-fht
 and then put the files into your configuration.yaml
 
 # Thanks to
-Thanks a lot to https://github.com/tarek-yashi for writing the plugin.
+Thanks a lot to https://github.com/multilan-tarek for writing the plugin.
