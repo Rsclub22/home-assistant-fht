@@ -10,7 +10,7 @@ Setup for the FHEM WEBapi here: https://github.com/Rsclub22/home-assistant-fht#f
 **IMPORTANT:** The WEBapi needs to be accessable without a password
 # Setup
 The FHEM Connector needs to be cloned into the custom_components folder
-Download the FHEM Connector here: https://github.com/Rsclub22/home-assistant-fht/releases/download/v0.3/fht_heating.zip
+Download the FHEM Connector here: [https://github.com/Rsclub22/home-assistant-fht/releases/download/v0.3/fht_heating.zip](https://github.com/Rsclub22/home-assistant-fht/releases/download/v.0.3/fht_heating.zip)
 and unzip it in your `custom_components` directory. If it doesn't exist create the directory with `mkdir custom_components` and change the permissions with `chmod 751 custom_components` and `chown -R homeassistant custom_components`
 
 ## FHEM WEBapi
