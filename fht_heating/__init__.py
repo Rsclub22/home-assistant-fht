@@ -1,15 +1,21 @@
-def setup(hass, config):
-    """Set up the Fth platform."""
+from homeassistant.const import Platform
+
+PLATFORMS: list[Platform] = [Platform.CLIMATE]
+
+
+async def async_setup(hass, config):
+    """Set up the Fht platform."""
     return True
 
 
-def setup_entry(hass, entry):
-    """Set up the Fth heater."""
-    hass.create_task(hass.config_entries.forward_entry_setup(entry, "climate"))
+async def async_setup_entry(hass, entry):
+    """Set up the Fht heater."""
+    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
 
 
-def unload_entry(hass, config_entry):
+async def async_unload_entry(hass, config_entry):
     """Unload a config entry."""
-    unload_ok = hass.config_entries.forward_entry_unload(config_entry, "climate")
-    return unload_ok
+    return await hass.config_entries.async_unload_platforms(
+        config_entry, PLATFORMS
+    )
