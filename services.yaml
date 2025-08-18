@@ -1,0 +1,31 @@
+# Example services.yaml entry
+
+# Service ID
+set_temperature:
+  # Service name as shown in UI
+  name: Set temperature
+  # Description of the service
+  description: Sets temperature of thermosthat.
+  # If the service accepts entity IDs, target allows the user to specify entities by entity, device, or area. If `target` is specified, `entity_id` should not be defined in the `fields` map. By default it shows only targets matching entities from the same domain as the service, but if further customization is required, target supports the entity, device, and area selectors (https://www.home-assistant.io/docs/blueprint/selectors/). Entity selector parameters will automatically be applied to device and area, and device selector parameters will automatically be applied to area. 
+  target:
+  
+  fields:
+    # Key of the field
+    temperature:
+      # Field name as shown in UI
+      name: Temperature
+      # Description of the field
+      description: Desired Temperature
+      # Whether or not field is required (default = false)
+      required: true
+      # Example value that can be passed for this field
+      example: "19.5"
+      # The default field value
+      default: "19.5"
+      # Selector (https://www.home-assistant.io/docs/blueprint/selectors/) to control the input UI for this field
+      selector:
+        number:
+          min: 6.0
+          max: 30.0
+          step: 0.5
+          unit_of_measurement: "°C"
