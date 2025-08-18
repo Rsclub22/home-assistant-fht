@@ -25,7 +25,19 @@ attr WEBapi allowfrom <your-homeassistant-ip-here>
 **IMPORTANT:** The WEBapi needs to be accessabile without a password
 
 # Configuration
-## Example
+## New
+Done via Webinterface in Homeassitant --> Search for FHT Heating
+
+<img width="392" height="308" alt="grafik" src="https://github.com/user-attachments/assets/eb33a2dd-b83c-46c8-bc66-99511bc488bb" />
+
+`address`: The IP of the FHEM-Webapi with port\
+`dev_name`: The Name of the Device in FHEM
+
+<img width="392" height="308" alt="grafik" src="https://github.com/user-attachments/assets/2bbcadea-a90a-4c06-b6e0-fb3f060ab2d3" />
+
+For multiple devices just add multiple of the the entrys.
+
+## OLD: Example
 see `example_configuration.yaml` (https://github.com/Rsclub22/home-assistant-fht/blob/main/example_configuration.yaml)
 and then put the files into your configuration.yaml
 
