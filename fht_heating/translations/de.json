@@ -1,0 +1,17 @@
+{
+    "title": "FHT Heizung",
+    "description": "Integration für FHT Heizungssteuerung",
+    "state": {
+        "on": "Ein",
+        "off": "Aus"
+    },
+    "settings": {
+        "temperature": "Temperatur",
+        "mode": "Modus",
+        "schedule": "Zeitplan"
+    },
+    "errors": {
+        "connection_failed": "Verbindung fehlgeschlagen",
+        "invalid_temperature": "Ungültige Temperatur"
+    }
+}
