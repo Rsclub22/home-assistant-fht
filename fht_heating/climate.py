@@ -55,7 +55,7 @@ class FhtClimate(ClimateEntity):
 
         # exakt wie gewünscht:
         self._attr_name = f"{self._dev_name}"
-        self._attr_unique_id = str(self._address or self._dev_name)
+        self._attr_unique_id = f"{self._address}_{self._dev_name}"
         self._attr_hvac_action = HVACAction.IDLE
         self._attr_current_temperature = None
         self._attr_target_temperature = None
@@ -71,7 +71,7 @@ class FhtClimate(ClimateEntity):
     def device_info(self) -> DeviceInfo:
         # gleicher Identifier wie Binary-Sensor -> ein Gerät
         return DeviceInfo(
-            identifiers={(DOMAIN, str(self._address or self._dev_name))},
+            identifiers={(DOMAIN, f"{self._address}_{self._dev_name}")},
             name=f"{self._dev_name}",
             manufacturer="FHT",
             model="Thermostat",

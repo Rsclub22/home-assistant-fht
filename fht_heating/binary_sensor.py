@@ -20,14 +20,14 @@ class FhtWindowSensor(BinarySensorEntity):
         self._address = getattr(fht, "address", dev_name)
         self._dev_name = dev_name
 
-        self._attr_name = f"FHT {self._dev_name}"
-        self._attr_unique_id = f"{self._address}_window"
+        self._attr_name = f"{self._dev_name} Window Sensor"
+        self._attr_unique_id = f"{self._address}_{self._dev_name}_window"
         self._state = None
 
     @property
     def device_info(self) -> DeviceInfo:
         return DeviceInfo(
-            identifiers={(DOMAIN, str(self._address))},  # gleich wie Climate
+            identifiers={(DOMAIN, f"{self._address}_{self._dev_name}")},  # gleich wie Climate
             name=f"FHT {self._dev_name}",
             manufacturer="FHT",
             model="Thermostat",
