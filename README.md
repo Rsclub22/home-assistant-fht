@@ -65,14 +65,20 @@ attr WEBapi allowfrom <your-homeassistant-ip>
 
 Add the integration via the Home Assistant UI: **Settings → Devices & Services → Add Integration → FHT Heating**.
 
-<img width="392" height="308" alt="Setup screen" src="https://github.com/user-attachments/assets/eb33a2dd-b83c-46c8-bc66-99511bc488bb" />
+<img width="575" height="347" alt="image" src="https://github.com/user-attachments/assets/b48d863b-4d24-4252-a28a-aa22892c1f9b" />
 
 - **Address**: Full URL to the FHEM WEBapi, e.g. `http://192.168.1.100:8086`
 - **Device name**: The FHEM device name, e.g. `FHT_1c50`
 
-<img width="392" height="308" alt="Device config" src="https://github.com/user-attachments/assets/2bbcadea-a90a-4c06-b6e0-fb3f060ab2d3" />
+<img width="575" height="347" alt="image" src="https://github.com/user-attachments/assets/bc3e7368-4763-4ca4-85fd-e6bd080fffa7" />
 
 To add more devices go to **Settings → Devices & Services → FHT Heating → Configure** and choose **Add device**.
+<img width="336" height="170" alt="image" src="https://github.com/user-attachments/assets/d769f8d8-16fc-467d-8e49-d55fd549d67f" />
+<img width="1177" height="210" alt="image" src="https://github.com/user-attachments/assets/c4770e9b-5408-44e8-a66c-c9f8ed66f9c1" />
+<img width="595" height="291" alt="image" src="https://github.com/user-attachments/assets/b2acab3c-f856-46d6-afbb-388bc8754287" />
+<img width="595" height="291" alt="image" src="https://github.com/user-attachments/assets/7395fe5a-1f41-4628-b712-63bff2c1d495" />
+
+
 
 When adding devices, the combination of FHEM address and device name is used as the unique identifier, so multiple devices under the same FHEM server are fully supported.
 
