@@ -1,45 +1,117 @@
 # home-assistant-fht
-## from: https://github.com/Rsclub22
+
 FHEM Connector for FHT Heating devices (connected via FHEM)
 
-## Requires FHEM to work
-You can find FHEM here: https://fhem.de/
-## Requires manual setup via FHEM-WEBapi
-Setup for the FHEM WEBapi here: https://github.com/Rsclub22/home-assistant-fht#fhem-webapi
+## Compatibility
 
-**IMPORTANT:** The WEBapi needs to be accessable without a password
+This integration supports Home Assistant 2025.1.0 and later.
+
+## Requires FHEM to work
+
+You can find FHEM here: https://fhem.de/
+
+## Requires manual setup via FHEM-WEBapi
+
+**IMPORTANT:** The WEBapi needs to be accessible without a password.
+
+Setup instructions: [FHEM WEBapi](#fhem-webapi)
+
+---
+
 # Setup
-The FHEM Connector needs to be cloned into the custom_components folder
-Download the FHEM Connector here: [https://github.com/Rsclub22/home-assistant-fht/releases/download/v0.3/fht_heating.zip](https://github.com/Rsclub22/home-assistant-fht/releases/download/v.0.3/fht_heating.zip)
-and unzip it in your `custom_components` directory. If it doesn't exist create the directory with `mkdir custom_components` and change the permissions with `chmod 751 custom_components` and `chown -R homeassistant custom_components`
+
+## HACS (Recommended)
+
+You can install this integration via HACS as a Custom Repository:
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Rsclub22&repository=home-assistant-fht)
+
+1. Go to HACS → Integrations → 3-dot menu (top right) → Custom repositories.
+2. Add the URL `https://github.com/Rsclub22/home-assistant-fht` and choose `Integration` as category.
+3. Click **ADD**.
+4. Search for **FHT Heating** in HACS and click **Download**.
+5. Restart Home Assistant.
+
+## Manual Setup
+
+Copy the `fht_heating` folder into your Home Assistant `custom_components` directory:
+
+```bash
+mkdir -p custom_components
+chmod 751 custom_components
+chown -R homeassistant custom_components
+```
+
+Then copy the contents of `custom_components/fht_heating/` from this repository into `<config>/custom_components/fht_heating/`.
+
+---
 
 ## FHEM WEBapi
-Run these commands to open the WEBapi from FHEM
-replace `<your-homeassistant-ip-here>`with the IP of your Home-Assistant Instance
+
+Run these commands in FHEM to open the WEBapi.
+Replace `<your-homeassistant-ip>` with the IP address of your Home Assistant instance:
+
 ```bash
 define WEBapi FHEMWEB 8086 global
 attr WEBapi csrfToken none
-attr WEBapi allowfrom <your-homeassistant-ip-here>
-
+attr WEBapi allowfrom <your-homeassistant-ip>
 ```
-**IMPORTANT:** The WEBapi needs to be accessabile without a password
+
+**IMPORTANT:** The WEBapi must be accessible without a password.
+
+---
 
 # Configuration
-## New
-Done via Webinterface in Homeassitant --> Search for FHT Heating
 
-<img width="392" height="308" alt="grafik" src="https://github.com/user-attachments/assets/eb33a2dd-b83c-46c8-bc66-99511bc488bb" />
+Add the integration via the Home Assistant UI: **Settings → Devices & Services → Add Integration → FHT Heating**.
 
-`address`: The IP of the FHEM-Webapi with port\
-`dev_name`: The Name of the Device in FHEM
+<img width="392" height="308" alt="Setup screen" src="https://github.com/user-attachments/assets/eb33a2dd-b83c-46c8-bc66-99511bc488bb" />
 
-<img width="392" height="308" alt="grafik" src="https://github.com/user-attachments/assets/2bbcadea-a90a-4c06-b6e0-fb3f060ab2d3" />
+- **Address**: Full URL to the FHEM WEBapi, e.g. `http://192.168.1.100:8086`
+- **Device name**: The FHEM device name, e.g. `FHT_1c50`
 
-For multiple devices just add multiple of the the entrys.
+<img width="392" height="308" alt="Device config" src="https://github.com/user-attachments/assets/2bbcadea-a90a-4c06-b6e0-fb3f060ab2d3" />
 
-## OLD: Example
-see `example_configuration.yaml` (https://github.com/Rsclub22/home-assistant-fht/blob/main/example_configuration.yaml)
-and then put the files into your configuration.yaml
+To add more devices go to **Settings → Devices & Services → FHT Heating → Configure** and choose **Add device**.
+
+When adding devices, the combination of FHEM address and device name is used as the unique identifier, so multiple devices under the same FHEM server are fully supported.
+
+---
+
+# Entities
+
+Each FHT device exposes the following entities in Home Assistant:
+
+| Entity | Type | Description |
+|---|---|---|
+| Thermostat | `climate` | Current & target temperature, HVAC mode |
+| Window Sensor | `binary_sensor` | Open/closed state of the FHT window contact |
+| Mode | `select` | FHT operating mode (auto / manual / holiday) |
+| Day Temperature | `number` | Day setpoint temperature |
+| Night Temperature | `number` | Night setpoint temperature |
+| Mon–Sun From1/To1/From2/To2 | `time` | Weekly schedule slots |
+
+---
+
+# Services
+
+### `fht_heating.set_schedule`
+
+Sets the full weekly schedule and temperature setpoints in one call (batches FHEM commands to save radio airtime).
+
+Fields: `device_id`, `day_temp`, `night_temp`, `mon_from1`, `mon_to1`, … `sun_from2`, `sun_to2`
+
+See `custom_components/fht_heating/services.yaml` for the full field reference.
+
+---
+
+# Legacy YAML configuration
+
+For older YAML-based setups see `example_configuration.yaml`.
+The recommended way is the UI config flow described above.
+
+---
 
 # Thanks to
-Thanks a lot to https://github.com/multilan-tarek for writing the plugin.
+
+Thanks a lot to [@multilan-tarek](https://github.com/multilan-tarek) for writing the original plugin.
