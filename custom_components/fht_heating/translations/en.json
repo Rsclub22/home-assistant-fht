@@ -1,0 +1,17 @@
+{
+  "title": "FHT Heating",
+  "description": "Integration for FHT heating control",
+  "state": {
+    "on": "On",
+    "off": "Off"
+  },
+  "settings": {
+    "temperature": "Temperature",
+    "mode": "Mode",
+    "schedule": "Schedule"
+  },
+  "errors": {
+    "connection_failed": "Connection failed",
+    "invalid_temperature": "Invalid temperature"
+  }
+}

@@ -1,0 +1,174 @@
+# Example services.yaml entry
+
+# Service ID
+set_schedule:
+  name: Set Schedule
+  description: Sets the complete schedule and temperatures to save FHEM airtime by batching commands.
+  fields:
+    device_id:
+      name: Device
+      description: The FHT Thermostat Device
+      required: true
+      selector:
+        device:
+          integration: fht_heating
+    day_temp:
+      name: Day Temperature
+      description: Target temperature for daytime
+      required: false
+      selector:
+        number:
+          min: 5.5
+          max: 30.0
+          step: 0.5
+          unit_of_measurement: "°C"
+    night_temp:
+      name: Night Temperature
+      description: Target temperature for nighttime
+      required: false
+      selector:
+        number:
+          min: 5.5
+          max: 30.0
+          step: 0.5
+          unit_of_measurement: "°C"
+    mon_from1:
+      name: Monday From 1
+      required: false
+      selector:
+        time:
+    mon_to1:
+      name: Monday To 1
+      required: false
+      selector:
+        time:
+    mon_from2:
+      name: Monday From 2
+      required: false
+      selector:
+        time:
+    mon_to2:
+      name: Monday To 2
+      required: false
+      selector:
+        time:
+    tue_from1:
+      name: Tuesday From 1
+      required: false
+      selector:
+        time:
+    tue_to1:
+      name: Tuesday To 1
+      required: false
+      selector:
+        time:
+    tue_from2:
+      name: Tuesday From 2
+      required: false
+      selector:
+        time:
+    tue_to2:
+      name: Tuesday To 2
+      required: false
+      selector:
+        time:
+    wed_from1:
+      name: Wednesday From 1
+      required: false
+      selector:
+        time:
+    wed_to1:
+      name: Wednesday To 1
+      required: false
+      selector:
+        time:
+    wed_from2:
+      name: Wednesday From 2
+      required: false
+      selector:
+        time:
+    wed_to2:
+      name: Wednesday To 2
+      required: false
+      selector:
+        time:
+    thu_from1:
+      name: Thursday From 1
+      required: false
+      selector:
+        time:
+    thu_to1:
+      name: Thursday To 1
+      required: false
+      selector:
+        time:
+    thu_from2:
+      name: Thursday From 2
+      required: false
+      selector:
+        time:
+    thu_to2:
+      name: Thursday To 2
+      required: false
+      selector:
+        time:
+    fri_from1:
+      name: Friday From 1
+      required: false
+      selector:
+        time:
+    fri_to1:
+      name: Friday To 1
+      required: false
+      selector:
+        time:
+    fri_from2:
+      name: Friday From 2
+      required: false
+      selector:
+        time:
+    fri_to2:
+      name: Friday To 2
+      required: false
+      selector:
+        time:
+    sat_from1:
+      name: Saturday From 1
+      required: false
+      selector:
+        time:
+    sat_to1:
+      name: Saturday To 1
+      required: false
+      selector:
+        time:
+    sat_from2:
+      name: Saturday From 2
+      required: false
+      selector:
+        time:
+    sat_to2:
+      name: Saturday To 2
+      required: false
+      selector:
+        time:
+    sun_from1:
+      name: Sunday From 1
+      required: false
+      selector:
+        time:
+    sun_to1:
+      name: Sunday To 1
+      required: false
+      selector:
+        time:
+    sun_from2:
+      name: Sunday From 2
+      required: false
+      selector:
+        time:
+    sun_to2:
+      name: Sunday To 2
+      required: false
+      selector:
+        time:

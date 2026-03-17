@@ -1,0 +1,13 @@
+{
+    "domain": "fht_heating",
+    "name": "FHT Heating",
+    "documentation": "https://github.com/Rsclub22/home-assistant-fht",
+    "issue_tracker": "https://github.com/Rsclub22/home-assistant-fht/issues",
+    "dependencies": [],
+    "codeowners": ["@Rsclub22", "@multilan-tarek"],
+    "requirements": ["requests"],
+    "iot_class": "local_polling",
+    "version": "2.0.0-rc1",
+    "homeassistant": "2025.1.0",
+    "config_flow": true
+}
