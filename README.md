@@ -1,5 +1,16 @@
 # home-assistant-fht
 
+> [!IMPORTANT]
+> **Successor: [home-assistant-cul](https://github.com/Rsclub22/home-assistant-cul).** It talks to the CUL (culfw) directly, without FHEM. New setups should use it; this integration only gets fixes.
+>
+> Why:
+> - The FHEM web API had to be open without a password, and its values could not be cached properly: every value meant another HTTP request.
+> - FHEM had to run next to Home Assistant only to bridge the radio.
+> - home-assistant-cul reads the radio telegrams itself (local push). Values appear as soon as a device sends them, and commands respect the CUL's buffer and send limit.
+> - FHT80b thermostats can be paired from the Home Assistant UI. The CUL can be connected via USB (auto-discovered) or ser2net.
+>
+> Switching is easy: home-assistant-cul takes over the `fht_heating` entities, keeping entity IDs, names and areas. See its README, section "Migrating from home-assistant-fht".
+
 FHEM Connector for FHT Heating devices (connected via FHEM)
 
 ## Compatibility
